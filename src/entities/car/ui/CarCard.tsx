@@ -8,6 +8,7 @@ import {
   Palette,
   Calendar,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function CarCard({ car }: { car: Car }) {
   const img = car.images?.image?.[0];
@@ -17,10 +18,12 @@ export default function CarCard({ car }: { car: Car }) {
   return (
     <div className="bg-white shadow rounded-xl overflow-hidden flex flex-col transition hover:shadow-lg">
       {img ? (
-        <img
+        <Image
           src={img}
           alt={title}
-          className="w-full h-44 object-cover"
+          width={400}
+          height={176}
+          className="object-cover rounded-t-xl"
         />
       ) : (
         <div className="w-full h-44 bg-gray-200 flex items-center justify-center text-sm text-gray-500">
